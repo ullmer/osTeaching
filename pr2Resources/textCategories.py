@@ -2,16 +2,18 @@
 # Brygg Ullmer, Clemson University
 # Begun 2026-10-20
 
+import traceback
+
 ################## text categories ##################
 
 class textCategories:
   entries    = None
   categories = None
 
-  def __init__(categoryFn):
+  def __init__(self, categoryFn):
     self.readCategories(categoryFn)
 
-  def readCategories(categoryFn):
+  def readCategories(self, categoryFn):
     try:
       f  = open(categoryFn, 'rt')
       rawlines   = f.readlines()
@@ -22,11 +24,20 @@ class textCategories:
       for rawline in rawlines:
         cleanline = rawline.rstrip()                     # remove trailing newline character
         if len(cleanline) > 2: 
-          entries.append(cleanline) # remove blank lines
+          self.entries.append(cleanline) # remove blank lines
           firstColonIndex = cleanline.find(':')
           if firstColonIndex > 0:
             categoryName = cleanline[0:firstColonIndex]
-            categories[categoryName] = cleanline
+            self.categories[categoryName] = cleanline
+
+    except: print("textCategories readCategories error:"); traceback.print_exc()
+
+  def getCategoryList(self):
+    try:
+      if self.categories is None: print("textCategories getCategoryList: no categories exist!"); return None
+      result = list(self.categories.keys())
+      return result
+    except: print("textCategories getCategoryList error:"); traceback.print_exc()
 
 ################## main ##################
 
