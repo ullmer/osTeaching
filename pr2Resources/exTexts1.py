@@ -7,7 +7,7 @@ tc = textCategories('cspanCategories.txt')
 tb = textBlocks('sc/2025')
 
 cl = tc.getCategoryList()
-bl = tb.getBlockList()
+bl = tb.getFns()
 
 print('categories:', cl)
 print('text fns:',   bl)
