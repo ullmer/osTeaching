@@ -16,10 +16,14 @@ class textBlocks:
   fileNames = None
   fn2txt    = None
   fn2alias  = None
+  verbose   = False
 
   ################## constructor ##################
 
-  def __init__(self, directoryName):
+  def __init__(self, directoryName, **kwargs):
+
+    self.__dict__.update(kwargs) # allowing (e.g.) -recurive to be passed as an argument
+
     self.dirName  = directoryName
     self.fn2txt   = {}
     self.fn2alias = {}
@@ -96,16 +100,19 @@ class textBlocks:
         shortName = cleanline[0:colonIdx]
         alias     = cleanline[colonIdx+1:]
         fn        = self.genFn(shortName)
-        print("loadAliases:", shortName, alias, fn)
+        if self.verbose: print("loadAliases:", shortName, alias, fn)
 
     except: print("textBlocks loadAliases error:"); traceback.print_exc(); return None
 
   ################## get alias by index (alias, fn) ##################
 
-  def getAliasIdx(self, idx):
+  def getAliasIdxFn(self, idx):
     try:
       if self.fn2alias is None: print("textBlocks getAliasIdx uninitialized");
-      keys = list(self.fn2alias.keys())
+      fakeys = list(self.fn2alias.keys())
+      key    = fakeys[idx]
+      result = fn2alias[key]
+      return result
     except: print("textBlocks getAliasIdx error:"); traceback.print_exc(); return None
 
 ################## main ##################
