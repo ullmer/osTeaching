@@ -10,8 +10,12 @@ class textCategories:
   entries    = None
   categories = None
 
+  ################## constructor ##################
+
   def __init__(self, categoryFn):
     self.readCategories(categoryFn)
+
+  ################## read categories ##################
 
   def readCategories(self, categoryFn):
     try:
@@ -32,12 +36,26 @@ class textCategories:
 
     except: print("textCategories readCategories error:"); traceback.print_exc()
 
+  ################## get category list ##################
+
   def getCategoryList(self):
     try:
       if self.categories is None: print("textCategories getCategoryList: no categories exist!"); return None
       result = list(self.categories.keys())
       return result
     except: print("textCategories getCategoryList error:"); traceback.print_exc()
+
+  ################## get category ##################
+
+  def getCategory(self, categoryName):
+    try:
+      if self.categories is None:             print("textCategories getCategory: no categories exist!"); return None
+      if categoryName not in self.categories: print("textCategories getCategory: category name not found:", 
+                                                    categoryName); return None
+      
+      result = self.categories[categoryName]
+      return result
+    except: print("textCategories getCategory error:"); traceback.print_exc()
 
 ################## main ##################
 
