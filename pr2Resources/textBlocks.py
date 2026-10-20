@@ -90,7 +90,7 @@ class textBlocks:
         if colonIdx < 0: print("loadAliases: ignoring:", cleanline); continue
 
         shortName = cleanline[0:colonIdx]
-        alias     = cleanline[colonIdx:]
+        alias     = cleanline[colonIdx+1:]
         fn        = self.genFn(shortName)
         print("loadAliases:", shortName, alias, fn)
 
