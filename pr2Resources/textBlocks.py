@@ -36,7 +36,7 @@ class textBlocks:
       if self.fileNames is None: print("textBlocks getBlockList: no filenames noted!"); return None
       result = self.fileNames
       return result
-    except: print("textBlocks getBlockList error:"); traceback.print_exc()
+    except: print("textBlocks getBlockList error:"); traceback.print_exc(); return None
 
   ################## read filename ##################
 
@@ -48,11 +48,20 @@ class textBlocks:
         self.name2txt[fn] = lines
         
       return lines
-    except: print("textBlocks readFn error:"); traceback.print_exc()
+    except: print("textBlocks readFn error:"); traceback.print_exc(); return None
 
   ################## read filename by index ##################
 
   def readFnIdx(self, idx, cacheText=True):
+    try:
+      fns = self.getFns()
+      numFns = len(fns)
+      if idx >= numFns: print("textBlocks readFnIdx error: index too large"); return None
+      fn     =  fns[idx]
+      result = self.readFn(fn, cacheText)
+      return result
+
+    except: print("textBlocks readFnIdx error:"); traceback.print_exc(); return None
 
 ################## main ##################
 
