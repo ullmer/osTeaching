@@ -96,6 +96,14 @@ class textBlocks:
 
     except: print("textBlocks loadAliases error:"); traceback.print_exc(); return None
 
+  ################## get alias by index (alias, fn) ##################
+
+  def getAliasIdx(self, idx):
+    try:
+      if self.fn2alias is None: print("textBlocks getAliasIdx uninitialized");
+      keys = list(self.fn2alias.keys())
+    except: print("textBlocks getAliasIdx error:"); traceback.print_exc(); return None
+
 ################## main ##################
 
 if __name__ == "__main__":
