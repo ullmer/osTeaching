@@ -17,7 +17,7 @@ class textBlocks:
 
   def __init__(self, directoryName):
     self.dirName   = directoryName
-    self.names2txt = {}
+    self.name2txt = {}
     self.findBlockFiles()
 
   ################## find block files ##################
