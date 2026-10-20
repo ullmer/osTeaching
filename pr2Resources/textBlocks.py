@@ -10,6 +10,8 @@ import glob
 class textBlocks:
   dirName   = None
   filePat   = '*.txt'
+  rfilePat  = '**/*.txt'
+  recursive = False #True
   extension = '.txt'
   fileNames = None
   fn2txt    = None
@@ -27,8 +29,10 @@ class textBlocks:
 
   def findBlockFiles(self):
     try:
-      globPat = self.dirName + '/' + self.filePat
-      self.fileNames = glob.glob(globPat)
+      if self.recursive: globPat = self.dirName + '/' + self.rfilePat
+      else:              globPat = self.dirName + '/' + self.filePat
+
+      self.fileNames = glob.glob(globPat, recursive=self.recursive)
 
     except: print("textBlocks readCategories error:"); traceback.print_exc()
 
