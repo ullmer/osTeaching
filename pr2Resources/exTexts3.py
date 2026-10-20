@@ -29,7 +29,7 @@ for tlen in [len0, len1, len2]: print("text block length:", tlen)
 
 fn0, alias0 = tb.getAliasIdxFA(0)
 fn3, alias3 = tb.getAliasIdxFA(2)
-print("alias index 0:", alias0, fn3)
-print("alias index 3:", alias0, fn3)
+print("alias index 0:", alias0, fn0)
+print("alias index 3:", alias3, fn3)
 
 ### end ###
