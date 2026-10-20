@@ -10,6 +10,7 @@ import glob
 class textBlocks:
   dirName   = None
   filePat   = '*.txt'
+  extension = '.txt'
   fileNames = None
   fn2txt    = None
 
@@ -28,6 +29,14 @@ class textBlocks:
       self.fileNames = glob.glob(globPat)
 
     except: print("textBlocks readCategories error:"); traceback.print_exc()
+
+  ################## generate filename ##################
+
+  def genFn(self, shortName):
+    try:
+      result = self.dirName + "/" + shortName + self.extension
+      return result
+    except: print("textBlocks genFns error:"); traceback.print_exc(); return None
 
   ################## get filenames ##################
 
