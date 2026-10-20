@@ -129,6 +129,12 @@ tags:
     - {abbrev: , name:  "",                subcats: 334, programs:  11881}
   minEqu:
   sciTec:
+    - {catLet: T,   catName:  "Science & Technology", programs:     }
+    - {abbrev: enePol, name:  "Energy Policy",        programs:  768}
+    - {abbrev: enviro, name:  "Environment",          programs: 2391}
+    - {abbrev: space,  name:  "Space",                programs:     }
+    - {abbrev: cliCha, name:  "Climate Change",       programs:     }
+
   socPol:
   staPol:
   wasPol:
@@ -145,9 +151,6 @@ tags:
 #Minorities & Equal Opportunity Minorities 3,593    
 #Minorities & Equal Opportunity Racial Relations 118    
 #
-#Science & Technology Energy Policy 768    T
-#Science & Technology Environment 2391    
-#Science & Technology Space     
 #
 #Social Policy Disaster Relief     S
 #
