@@ -111,11 +111,25 @@ class textBlocks:
     try:
       if self.fn2alias is None: print("textBlocks getAliasIdx uninitialized");
       fakeys = list(self.fn2alias.keys())
-      print("gaif len(fakeys):", len(fakeys))
-      key    = fakeys[idx]
-      result = self.fn2alias[key]
+      if self.verbose: print("gaif len(fakeys):", len(fakeys))
+      fn     = fakeys[idx]
+      return fn
+    except: print("textBlocks getAliasIdxFn error:"); traceback.print_exc(); return None
+
+  def getAliasIdx(self, idx):
+    try:
+      fn     = self.getAliasIdxFn(idx)
+      result = self.fn2alias[fn]
       return result
     except: print("textBlocks getAliasIdx error:"); traceback.print_exc(); return None
+
+  def getAliasIdxFA(self, idx):
+    try:
+      fn     = self.getAliasIdxFn(idx)
+      alias  = self.fn2alias[fn]
+      result = [fn, alias]
+      return result
+    except: print("textBlocks getAliasIdxFA error:"); traceback.print_exc(); return None
 
 ################## main ##################
 

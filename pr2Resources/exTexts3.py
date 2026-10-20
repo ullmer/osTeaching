@@ -27,7 +27,7 @@ len2 = len(txt1)
 for cat  in [cat0, cat1]: print("category:", cat)
 for tlen in [len0, len1, len2]: print("text block length:", tlen)
 
-aif0 = tb.getAliasIdxFn(0)
-print("alias index filename 0:", aif0)
+fn, alias = tb.getAliasIdxFA(0)
+print("alias index filename 0:", alias, fn)
 
 ### end ###
