@@ -73,6 +73,28 @@ class textBlocks:
       return result
 
     except: print("textBlocks readFnIdx error:"); traceback.print_exc(); return None
+  
+  ################## load aliases ##################
+
+  def loadAliases(self, aliasFn):
+    #e.g.
+    #12:Educator Assistance Act
+    #15:South Carolina Conservation Education Act
+
+    try:
+      f = open(aliasFn, 'rt')
+      rawlines = f.readlines()
+      for rawline in rawlines:
+        cleanline = rawline.rstrip() #remove \n
+        colonIdx  = cleanline.find(':')
+        if colonIdx < 0: print("loadAliases: ignoring:", cleanline); continue
+
+        shortName = cleanline[0:colonIdx]
+        alias     = cleanline[colonIdx:]
+        fn        = self.genFn(shortName)
+        print("loadAliases:", shortName, alias, fn)
+
+    except: print("textBlocks loadAliases error:"); traceback.print_exc(); return None
 
 ################## main ##################
 
