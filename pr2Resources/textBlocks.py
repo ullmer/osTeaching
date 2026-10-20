@@ -13,12 +13,14 @@ class textBlocks:
   extension = '.txt'
   fileNames = None
   fn2txt    = None
+  fn2alias  = None
 
   ################## constructor ##################
 
   def __init__(self, directoryName):
-    self.dirName   = directoryName
-    self.fn2txt = {}
+    self.dirName  = directoryName
+    self.fn2txt   = {}
+    self.fn2alias = {}
     self.findBlockFiles()
 
   ################## find block files ##################
