@@ -11,13 +11,13 @@ class textBlocks:
   dirName   = None
   filePat   = '*.txt'
   fileNames = None
-  name2txt  = None
+  fn2txt    = None
 
   ################## constructor ##################
 
   def __init__(self, directoryName):
     self.dirName   = directoryName
-    self.name2txt = {}
+    self.fn2txt = {}
     self.findBlockFiles()
 
   ################## find block files ##################
@@ -45,7 +45,7 @@ class textBlocks:
       f     = open(fn, 'rt')
       lines = f.readlines()
       if cacheText:
-        self.name2txt[fn] = lines
+        self.fn2txt[fn] = lines
         
       return lines
     except: print("textBlocks readFn error:"); traceback.print_exc(); return None
