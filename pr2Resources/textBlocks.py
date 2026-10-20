@@ -101,7 +101,8 @@ class textBlocks:
         alias     = cleanline[colonIdx+1:]
         fn        = self.genFn(shortName)
         if self.verbose: print("loadAliases:", shortName, alias, fn)
-
+        self.fn2alias[fn] = alias
+ 
     except: print("textBlocks loadAliases error:"); traceback.print_exc(); return None
 
   ################## get alias by index (alias, fn) ##################
@@ -110,8 +111,9 @@ class textBlocks:
     try:
       if self.fn2alias is None: print("textBlocks getAliasIdx uninitialized");
       fakeys = list(self.fn2alias.keys())
+      print("gaif len(fakeys):", len(fakeys))
       key    = fakeys[idx]
-      result = fn2alias[key]
+      result = self.fn2alias[key]
       return result
     except: print("textBlocks getAliasIdx error:"); traceback.print_exc(); return None
 
