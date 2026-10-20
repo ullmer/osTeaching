@@ -13,10 +13,14 @@ class textBlocks:
   fileNames = None
   name2txt  = None
 
+  ################## constructor ##################
+
   def __init__(self, directoryName):
     self.dirName   = directoryName
     self.names2txt = {}
     self.findBlockFiles()
+
+  ################## find block files ##################
 
   def findBlockFiles(self):
     try:
@@ -25,12 +29,16 @@ class textBlocks:
 
     except: print("textBlocks readCategories error:"); traceback.print_exc()
 
-  def getBlockList(self):
+  ################## get filenames ##################
+
+  def getFns(self):
     try:
       if self.fileNames is None: print("textBlocks getBlockList: no filenames noted!"); return None
       result = self.fileNames
       return result
     except: print("textBlocks getBlockList error:"); traceback.print_exc()
+
+  ################## read filename ##################
 
   def readFn(self, fn, cacheText=True):
     try:
@@ -42,11 +50,15 @@ class textBlocks:
       return lines
     except: print("textBlocks readFn error:"); traceback.print_exc()
 
+  ################## read filename by index ##################
+
+  def readFnIdx(self, idx, cacheText=True):
+
 ################## main ##################
 
 if __name__ == "__main__":
   tb = textBlocks('sc/2025')
-  bl = tb.getBlockList()
-  print(bl)
+  fl = tb.getFns()
+  print(fl)
 
 ### end ###
