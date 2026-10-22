@@ -1,3 +1,7 @@
+# Example document comparison
+# Brygg Ullmer, Clemson University
+# Begun 2026-10-22
+
 import time
 
 class markTime:
@@ -6,7 +10,7 @@ class markTime:
   def diff(self):     now = time.time(); diff = now - self.beginTime; return int(diff*1000)
 
 mt = markTime()
-from mdokBlocks     import *
+from mdokBlocks import *
 
 print("importing spacy...", mt.diff())
 import spacy
