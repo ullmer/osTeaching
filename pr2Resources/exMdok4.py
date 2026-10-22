@@ -35,9 +35,12 @@ for cat in categories: #create NLP instances for categories
   catNlp = nlp(cat)
   catNlps.append(catNlp)
 
+print(mt.diffstrb(), "creating NLP instances of acts")
 for i in range(4): #create NLP instances for named acts/laws
   fn, alias = mdb.getAliasIdxFA(i)
-  actStr    = mdb.readFn(fn)
+  actStrs   = mdb.readFn(fn)
+  actStr    = " ".join(actStrs) # join list of strings into single string
+  print(mt.diffstrb(), "asl:", len(actStr))
   actNlp    = nlp(actStr)
   actNlps.append(actNlp)
   actNames.append(alias)
