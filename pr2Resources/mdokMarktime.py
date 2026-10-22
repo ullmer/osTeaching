@@ -6,7 +6,7 @@ import time
 
 class markTime:
   beginTime = None
-  pad       = 4
+  pad       = 5
   lastTime  = None
   def __init__(self): self.beginTime = time.time(); self.lastTime = self.beginTime
 
