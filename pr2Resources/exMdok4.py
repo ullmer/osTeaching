@@ -6,14 +6,17 @@ from mdokMarktime import *
 mt = markTime()
 from mdokBlocks import *
 
-print(mt.diffstrb(), "importing spacy...")
+print(mt.diffstrb(), "importing spaCy...")
 import spacy
-print(mt.diffstrb(), "spacy imported")
+print(mt.diffstrb(), "spaCy imported")
 
 ################## print similarity##################
 
 def printSim(str1, str2, score):
-  print("Similarity between <" + str1 + "> and <" + str2 + ">: " + str(score))
+  str1  = "Similarity between <" + str1 + "> and <" + str2 + ">: " 
+  str1j = str1.rjust(70)
+  str2  = str(int(score*1000))
+  print(str1, str2)
 
 ################## main ##################
 
@@ -40,11 +43,10 @@ for i in range(4): #create NLP instances for named acts/laws
   fn, alias = mdb.getAliasIdxFA(i)
   actStrs   = mdb.readFn(fn)
   actStr    = " ".join(actStrs) # join list of strings into single string
-  print(mt.diffstrb(), "asl:", len(actStr))
   actNlp    = nlp(actStr)
   actNlps.append(actNlp)
   actNames.append(alias)
-  print("alias", alias)
+  print(mt.diffstrb(), "created nlp for", alias)
   
 for i in range(actsLen): 
   for j in range(catsLen):
@@ -53,8 +55,8 @@ for i in range(actsLen):
     actName = actNames[i]
     catName = categories[j]
     simScore = actNlp.similarity(catNlp)
-    printSim(actName, catName, score)
+    printSim(actName, catName, simScore)
 
-print(mt.diffstr(), "ending")
+print(mt.diffstrb(), "ending")
 
 ### end ###
