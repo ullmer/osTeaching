@@ -1,8 +1,16 @@
+import time
+
+class markTime:
+  beginTime = None
+  def __init__(self): self.beginTime = time.time()
+  def diff(self):     now = time.time(); diff = now - self.beginTime; return int(diff*1000)
+
+mt = markTime()
 from mdokBlocks     import *
 
-print("importing spacy...")
+print("importing spacy...", mt.diff())
 import spacy
-print("imported")
+print("spacy imported", mt.diff())
 
 ################## print similarity##################
 
@@ -13,7 +21,7 @@ def printSim(str1, str2, score):
 
 print("loading spacy model") 
 nlp = spacy.load("en_core_web_md")  # or en_core_web_lg
-print("model loaded")
+print("model loaded", mt.diff())
 
 mdb = mdokBlocks('sc/2025')
 
@@ -43,5 +51,7 @@ for i in range(actsLen):
     catName = categories[j]
     simScore = actNlp.similarity(catNlp)
     printSim(actName, catName, score)
+
+print("ending", mt.diff())
 
 ### end ###
