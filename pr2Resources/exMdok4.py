@@ -13,10 +13,9 @@ print(mt.diffstrb(), "spaCy imported")
 ################## print similarity##################
 
 def printSim(str1, str2, score):
-  str1  = "Similarity between <" + str1 + "> and <" + str2 + ">: " 
-  str1j = str1.rjust(70)
-  str2  = str(int(score*1000))
-  print(str1, str2)
+  strScore  = str(int(score*1000))
+  strLabel  = ": similarity between <" + str1 + "> and <" + str2 + ">"
+  print(strScore, strLabel)
 
 ################## main ##################
 
