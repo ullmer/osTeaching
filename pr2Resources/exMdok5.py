@@ -38,6 +38,7 @@ for cat in categories: #create NLP instances for categories
   catStr = " ".join(catWps)
   catNlp = nlp(catStr)
   catNlps.append(catNlp)
+  print(mt.diffstrb(), "created nlp for", cat)
 
 print(mt.diffstrb(), "creating NLP instances of acts")
 for i in range(4): #create NLP instances for named acts/laws

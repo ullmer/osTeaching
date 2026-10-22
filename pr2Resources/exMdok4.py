@@ -55,6 +55,7 @@ for i in range(actsLen):
     catName = categories[j]
     simScore = actNlp.similarity(catNlp)
     printSim(actName, catName, simScore)
+  print("---")
 
 print(mt.diffstrb(), "ending")
 
