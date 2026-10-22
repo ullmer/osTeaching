@@ -15,18 +15,26 @@ print("loading spacy model")
 nlp = spacy.load("en_core_web_md")  # or en_core_web_lg
 print("model loaded")
 
-tb = mdokBlocks('sc/2025')
+mdb = mdokBlocks('sc/2025')
 
 categories = ['energy', 'education', 'agriculture']
-catNlps = []
+catsLen    = len(categories)
+actsLen    = 4
+catsNlps   = []
+actsNlps   = []
 
-for cat in categories:
+for cat in categories: #create NLP instances for categories
   catNlp = nlp(cat)
   catNlps.append(catNlp)
 
-for i in range(4):
+for i in range(4): #create NLP instances for named acts/laws
   fn, alias = tb.getAliasIdxFA(i)
-
-  for j in categories:
+  actStr = mdb.readFn(fn)
+  actNlp = nlp(actStr)
+  actNlps.append(actNlp)
+  
+for i in range(actsLen): 
+  for j in range(catsLen):
+    actNlp = ac
 
 ### end ###
