@@ -7,7 +7,7 @@ import glob
 
 ################## text blocks ##################
 
-class textBlocks:
+class mdokBlocks:
   dirName   = None
   filePat   = '*.txt'
   rfilePat  = '**/*.txt'
@@ -38,7 +38,7 @@ class textBlocks:
 
       self.fileNames = glob.glob(globPat, recursive=self.recursive)
 
-    except: print("textBlocks readCategories error:"); traceback.print_exc()
+    except: print("mdokBlocks readCategories error:"); traceback.print_exc()
 
   ################## generate filename ##################
 
@@ -46,16 +46,16 @@ class textBlocks:
     try:
       result = self.dirName + "/" + shortName + self.extension
       return result
-    except: print("textBlocks genFns error:"); traceback.print_exc(); return None
+    except: print("mdokBlocks genFns error:"); traceback.print_exc(); return None
 
   ################## get filenames ##################
 
   def getFns(self):
     try:
-      if self.fileNames is None: print("textBlocks getBlockList: no filenames noted!"); return None
+      if self.fileNames is None: print("mdokBlocks getBlockList: no filenames noted!"); return None
       result = self.fileNames
       return result
-    except: print("textBlocks getBlockList error:"); traceback.print_exc(); return None
+    except: print("mdokBlocks getBlockList error:"); traceback.print_exc(); return None
 
   ################## read filename ##################
 
@@ -67,7 +67,7 @@ class textBlocks:
         self.fn2txt[fn] = lines
         
       return lines
-    except: print("textBlocks readFn error:"); traceback.print_exc(); return None
+    except: print("mdokBlocks readFn error:"); traceback.print_exc(); return None
 
   ################## read filename by index ##################
 
@@ -75,12 +75,12 @@ class textBlocks:
     try:
       fns = self.getFns()
       numFns = len(fns)
-      if idx >= numFns: print("textBlocks readFnIdx error: index too large"); return None
+      if idx >= numFns: print("mdokBlocks readFnIdx error: index too large"); return None
       fn     =  fns[idx]
       result = self.readFn(fn, cacheText)
       return result
 
-    except: print("textBlocks readFnIdx error:"); traceback.print_exc(); return None
+    except: print("mdokBlocks readFnIdx error:"); traceback.print_exc(); return None
   
   ################## load aliases ##################
 
@@ -103,25 +103,25 @@ class textBlocks:
         if self.verbose: print("loadAliases:", shortName, alias, fn)
         self.fn2alias[fn] = alias
  
-    except: print("textBlocks loadAliases error:"); traceback.print_exc(); return None
+    except: print("mdokBlocks loadAliases error:"); traceback.print_exc(); return None
 
   ################## get alias by index (alias, fn) ##################
 
   def getAliasIdxFn(self, idx):
     try:
-      if self.fn2alias is None: print("textBlocks getAliasIdx uninitialized");
+      if self.fn2alias is None: print("mdokBlocks getAliasIdx uninitialized");
       fakeys = list(self.fn2alias.keys())
       if self.verbose: print("gaif len(fakeys):", len(fakeys))
       fn     = fakeys[idx]
       return fn
-    except: print("textBlocks getAliasIdxFn error:"); traceback.print_exc(); return None
+    except: print("mdokBlocks getAliasIdxFn error:"); traceback.print_exc(); return None
 
   def getAliasIdx(self, idx):
     try:
       fn     = self.getAliasIdxFn(idx)
       result = self.fn2alias[fn]
       return result
-    except: print("textBlocks getAliasIdx error:"); traceback.print_exc(); return None
+    except: print("mdokBlocks getAliasIdx error:"); traceback.print_exc(); return None
 
   def getAliasIdxFA(self, idx):
     try:
@@ -129,13 +129,13 @@ class textBlocks:
       alias  = self.fn2alias[fn]
       result = [fn, alias]
       return result
-    except: print("textBlocks getAliasIdxFA error:"); traceback.print_exc(); return None
+    except: print("mdokBlocks getAliasIdxFA error:"); traceback.print_exc(); return None
 
 ################## main ##################
 
 if __name__ == "__main__":
-  tb = textBlocks('sc/2025')
-  fl = tb.getFns()
+  mdb = mdokBlocks('sc/2025')
+  fl  = mdb.getFns()
   print(fl)
 
 ### end ###
