@@ -2,19 +2,13 @@
 # Brygg Ullmer, Clemson University
 # Begun 2026-10-22
 
-import time
-
-class markTime:
-  beginTime = None
-  def __init__(self): self.beginTime = time.time()
-  def diff(self):     now = time.time(); diff = now - self.beginTime; return int(diff*1000)
-
+from mdokMarktime import *
 mt = markTime()
 from mdokBlocks import *
 
-print("importing spacy...", mt.diff())
+print(mt.diffstrb(), "importing spacy...")
 import spacy
-print("spacy imported", mt.diff())
+print(mt.diffstrb(), "spacy imported")
 
 ################## print similarity##################
 
@@ -23,9 +17,9 @@ def printSim(str1, str2, score):
 
 ################## main ##################
 
-print("loading spacy model") 
+print(mt.diffstrb(), "loading spacy model") 
 nlp = spacy.load("en_core_web_md")  # or en_core_web_lg
-print("model loaded", mt.diff())
+print(mt.diffstrb(), "model loaded")
 
 mdb = mdokBlocks('sc/2025')
 
@@ -56,6 +50,6 @@ for i in range(actsLen):
     simScore = actNlp.similarity(catNlp)
     printSim(actName, catName, score)
 
-print("ending", mt.diff())
+print(mt.diffstr(), "ending")
 
 ### end ###
