@@ -22,6 +22,7 @@ nlp = spacy.load("en_core_web_md")  # or en_core_web_lg
 print(mt.diffstrb(), "model loaded")
 
 mdb = mdokBlocks('sc/2025')
+mdb.loadAliases('sc25-aliases.txt')
 
 categories = ['energy', 'education', 'agriculture']
 catsLen    = len(categories)
@@ -40,6 +41,7 @@ for i in range(4): #create NLP instances for named acts/laws
   actNlp    = nlp(actStr)
   actNlps.append(actNlp)
   actNames.append(alias)
+  print("alias", alias)
   
 for i in range(actsLen): 
   for j in range(catsLen):

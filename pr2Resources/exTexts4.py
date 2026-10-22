@@ -9,7 +9,6 @@ categories = ['energy', 'education', 'agriculture']
 
 for i in range(4):
   fn, alias = tb.getAliasIdxFA(i)
-
-  for j in categories:
+  for j in categories: pass
 
 ### end ###
