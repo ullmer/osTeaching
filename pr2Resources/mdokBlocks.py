@@ -61,12 +61,18 @@ class mdokBlocks:
 
   def readFn(self, fn, cacheText=True):
     try:
-      f     = open(fn, 'rt')
-      lines = f.readlines()
+      f          = open(fn, 'rt')
+      rawlines   = f.readlines()
+      cleanlines = []
+
+      for rawline in rawlines:
+        cleanline = rawline.rstrip() 
+        cleanlines.append(cleanline)
+
       if cacheText:
-        self.fn2txt[fn] = lines
+        self.fn2txt[fn] = cleanlines
         
-      return lines
+      return cleanlines
     except: print("mdokBlocks readFn error:"); traceback.print_exc(); return None
 
   ################## read filename by index ##################

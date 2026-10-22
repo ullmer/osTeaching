@@ -1,5 +1,8 @@
 from mdokBlocks     import *
+
+print("importing spacy...")
 import spacy
+print("imported")
 
 ################## print similarity##################
 
@@ -26,9 +29,9 @@ for cat in categories: #create NLP instances for categories
   catNlps.append(catNlp)
 
 for i in range(4): #create NLP instances for named acts/laws
-  fn, alias = tb.getAliasIdxFA(i)
-  actStr = mdb.readFn(fn)
-  actNlp = nlp(actStr)
+  fn, alias = mdb.getAliasIdxFA(i)
+  actStr    = mdb.readFn(fn)
+  actNlp    = nlp(actStr)
   actNlps.append(actNlp)
   actNames.append(alias)
   
