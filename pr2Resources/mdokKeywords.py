@@ -27,7 +27,6 @@ class mdokKeywords:
         if token.pos_ in ("NOUN", "PROPN") and not token.is_stop:
           self.tokens.append(token.lemma_.lower())
   
-  
       self.counter = Counter(self.tokens) 
   
       result = ""
