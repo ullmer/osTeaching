@@ -1,8 +1,3 @@
-
-bookshelf/
-categories
-offline_catalogs.html
-search/
 320
 1619
 2000
