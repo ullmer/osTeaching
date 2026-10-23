@@ -10,7 +10,7 @@ class mdokKeywords:
   tokens  = None
   counter = None
   verbose = True
-  numKeywords = 100
+  numKeywords = 50
   
   #### constructor ####
 
@@ -20,7 +20,7 @@ class mdokKeywords:
   
   def extractKeywords(self, targetText):
     try:
-      doc = nlp(targetText)
+      doc = self.nlp(targetText)
       self.tokens = []
   
       for token in doc:

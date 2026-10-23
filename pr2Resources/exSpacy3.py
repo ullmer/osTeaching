@@ -1,3 +1,4 @@
+print("importing spacy")
 import spacy
 from mdokKeywords import *
 
@@ -145,7 +146,7 @@ PUBLIC SERVICE COMMISSION REQUIREMENTS FOR SETTLEMENT NEGOTIATIONS.'''
 mdkw = mdokKeywords(nlp)
 kw   = mdkw.extractKeywords(sc2025_41a)
 
-print('\n\n' + kw)
+print("\n\n" + str(kw))
 
 
 ### end ###
