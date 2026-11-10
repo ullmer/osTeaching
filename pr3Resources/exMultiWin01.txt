@@ -1,0 +1,10 @@
+I would appreciate an example of Python tkinter code that creates three windows.  
+The first and second should be 200 pixels wide, 700 pixels tall; the third 
+should be 700 pixels wide, 700 pixels tall.  These should be tiled horizontally.  
+In this first example, The top 500 pixels of the first window should include the 
+label "categories."  The top 500 pixels of the second window should include the 
+label "category instances."  The top 500 pixels of window 3 should include the 
+label "document text."  At the bottom of each window, please include buttons 
+labeled "show all" and "maximize."  The "maximize" button should cause the 
+associated window to maximize.  The "show all" should request each window 
+to return to the original "home position."
