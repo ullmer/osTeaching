@@ -16,12 +16,8 @@ windows = {}
 
 def maximize_window(win):
   """Maximize a specific window."""
-  try:
-      # Windows
-      win.state("zoomed")
-  except tk.TclError:
-      # Many Linux window managers
-      win.attributes("-zoomed", True)
+  try:                win.state("zoomed")             # Windows
+  except tk.TclError: win.attributes("-zoomed", True) # Many Linux window managers
 
 ################# show all ################# 
 
