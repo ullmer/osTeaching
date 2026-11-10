@@ -37,10 +37,8 @@ def show_all():
 ################# build single-argument callback ################# 
 
 def buildCallback1(methodName, arg1):
-  try:    callback = partial(methodName, arg1)
-  except: print("buildCallback1 error:"); traceback.print_exc()
- 
-  return callback
+  try:    callback = partial(methodName, arg1); return callback
+  except: print("buildCallback1 error:"); traceback.print_exc(); return None
 
 ################# create window ################# 
 
@@ -74,8 +72,10 @@ def create_window(name, title_text):
   button_frame = tk.Frame(win)
   button_frame.pack(side="bottom", fill="x", pady=10)
 
+  maxWinCallback = buildCallback1(maximize_window, win)
+
   bsa = tk.Button(button_frame, text="show all", command=show_all)
-  bmw = tk.Button(button_frame, text="maximize", command=lambda w=win: maximize_window(w))
+  bmw = tk.Button(button_frame, text="maximize", command=maxWinCallback)
 
   bsa.pack(side="left",  padx=10)
   bmw.pack(side="right", padx=10)
