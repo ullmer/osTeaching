@@ -12,6 +12,8 @@ HOME_GEOMETRIES = {
 
 windows = {}
 
+################# maximize window ################# 
+
 def maximize_window(win):
   """Maximize a specific window."""
   try:
@@ -21,22 +23,20 @@ def maximize_window(win):
       # Many Linux window managers
       win.attributes("-zoomed", True)
 
+################# show all ################# 
 
 def show_all():
   """Restore all windows to their home positions."""
   for name, win in windows.items():
-      try:
-          win.state("normal")
-      except tk.TclError:
-          pass
+      try: win.state("normal")
+      except tk.TclError: pass
 
-      try:
-          win.attributes("-zoomed", False)
-      except tk.TclError:
-          pass
+      try: win.attributes("-zoomed", False)
+      except tk.TclError: pass
 
       win.geometry(HOME_GEOMETRIES[name])
 
+################# create window ################# 
 
 def create_window(name, title_text):
   win = tk.Toplevel(root)
@@ -51,11 +51,7 @@ def create_window(name, title_text):
   top_frame.pack(fill="x")
   top_frame.pack_propagate(False)
 
-  label = tk.Label(
-      top_frame,
-      text=title_text,
-      font=("Arial", 18, "bold")
-  )
+  label = tk.Label(top_frame, text=title_text, font=("Arial", 18, "bold"))
   label.pack(expand=True)
 
   # --------------------------------------------------------------
