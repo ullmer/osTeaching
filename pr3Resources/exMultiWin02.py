@@ -72,21 +72,14 @@ def create_window(name, title_text):
   button_frame = tk.Frame(win)
   button_frame.pack(side="bottom", fill="x", pady=10)
 
-  tk.Button(
-      button_frame,
-      text="show all",
-      command=show_all
-  ).pack(side="left", padx=10)
+  bsa = tk.Button(button_frame, text="show all", command=show_all)
+  bmw = tk.Button(button_frame, text="maximize", command=lambda w=win: maximize_window(w))
 
-  tk.Button(
-      button_frame,
-      text="maximize",
-      command=lambda w=win: maximize_window(w)
-  ).pack(side="right", padx=10)
+  bsa.pack(side="left",  padx=10)
+  bmw.pack(side="right", padx=10)
 
   windows[name] = win
   return win
-
 
 # ----------------------------------------------------------------------
 # Root window (hidden)
@@ -100,3 +93,6 @@ create_window("category_instances", "category instances")
 create_window("document_text", "document text")
 
 root.mainloop()
+
+### end ###
+
