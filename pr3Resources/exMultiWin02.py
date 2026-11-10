@@ -1,4 +1,6 @@
 import tkinter as tk
+import traceback
+from functools import partial # mechanism used to construct callback
 
 # ----------------------------------------------------------------------
 # Home positions
@@ -31,6 +33,14 @@ def show_all():
       except tk.TclError: pass
 
       win.geometry(HOME_GEOMETRIES[name])
+
+################# build single-argument callback ################# 
+
+def buildCallback1(methodName, arg1):
+  try:    callback = partial(methodName, arg1)
+  except: print("buildCallback1 error:"); traceback.print_exc()
+ 
+  return callback
 
 ################# create window ################# 
 
