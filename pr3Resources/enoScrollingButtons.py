@@ -14,6 +14,7 @@ class enoScrollingButtons:
   tkCanvas       = None
   tkScroll       = None
   tkContainer    = None
+  tkButtonFrame  = None
   tkCanvasWindow = None
 
  ########### constructor ###########
@@ -56,22 +57,27 @@ class enoScrollingButtons:
       canvas.pack(side="left", fill="both", expand=True)
 
       # Frame that will hold the buttons
-      buttonFrame = ttk.Frame(canvas)
+      buttonFrame = self.tkButtonFrame = ttk.Frame(canvas)
 
       # Create a window inside the canvas
-      self.tkCanvasWindow = canvas.create_window((0, 0), window=button_frame, anchor="nw")
+      self.tkCanvasWindow = canvas.create_window((0, 0), window=buttonFrame, anchor="nw")
 
-  def on_frame_configure(self, event):
+  ########### on frame configure ###########
+
+  def onFrameConfigure(self, event):
     canvas = self.tkCanvas
     canvas.configure(scrollregion=canvas.bbox("all"))
 
-  def on_canvas_configure(self.event):
-    # Keep the internal frame width equal to the canvas width
-    canvas = self.tkCanvas
-    canvas.itemconfig(canvas_window, width=event.width)
+  ########### on canvas configure ###########
 
-button_frame.bind("<Configure>", on_frame_configure)
-canvas.bind("<Configure>", on_canvas_configure)
+  def onCanvasConfigure(self, event):
+    # Keep the internal frame width equal to the canvas width
+    canvas       = self.tkCanvas
+    canvasWindow = self.tkCanvasWindow
+    canvas.itemconfig(canvasWindow, width=event.width)
+
+    self.tkButtonFrame.bind("<Configure>", self.onFrameConfigure)
+    self.tkCanvas.bind("<Configure>",      self.onCanvasConfigure)
 
 # Button callback
 def button_pressed(n):
