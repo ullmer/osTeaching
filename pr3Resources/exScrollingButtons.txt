@@ -1,0 +1,1 @@
+hi!  could you please generate a python tkinter code that creates 30 buttons, numbered 1 to 30, that print their number when pressed; and is sized 300 pixels wide, 700 pixels tall, packed vertically, width-filling, with a right scrollbar that allows navigation of those beyond screen-height?
