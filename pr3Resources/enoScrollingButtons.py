@@ -1,15 +1,51 @@
+## Enodia Scrolling Buttons example
+# Brygg Ullmer, Clemson University, and CoPilot
+# Begun 2026-11-11
+
+import logging
 import tkinter as tk
 from tkinter import ttk
 
-root = tk.Tk()
-root.title("30 Buttons")
-root.geometry("300x700")
+class enoScrollingButtons:
+  autoBuildUI = False
+  tkRoot      = None
+  tkTitle     = 'buttons'
+  tkGeom      = "300x700"
+  tkCanvas    = None
+  tkContainer = None
 
-# Main container
-container = ttk.Frame(root)
-container.pack(fill="both", expand=True)
+ ########### constructor ###########
+  def __init__(self, **kwargs):
+    self.__dict__.update(kwargs)
+    logging.basicConfig(level=logging.INFO)
+    self.logger = logging.getLogger(__name__)
 
-# Canvas + scrollbar
+    if self.autoBuildUI: self.buildUiRoot(); self.buildUI()
+
+  ########### log error ###########
+  def logErr(self, msg):
+    try:    self.logger.error(msg); traceback.print_exc()
+    except: print("logErr error:"); traceback.print_exc()
+
+  ########### log info ###########
+  def logInf(self, msg):
+    try:    self.logger.info(msg)
+    except: print("logInf error:"); traceback.print_exc()
+
+  ########### build ui root ###########
+  def buildUiRoot(self):
+    root = self.tkRoot = tk.Tk()
+    root.title(self.tkTitle)
+    root.geometry(self.tkGeom)
+
+  ########### build ui ###########
+  def buildUI(self):
+    try:
+      # Main container
+      container = self.tkContainer = ttk.Frame(root)
+      container.pack(fill="both", expand=True)
+
+      # Canvas + scrollbar
 canvas = tk.Canvas(container)
 scrollbar = ttk.Scrollbar(container, orient="vertical", command=canvas.yview)
 
