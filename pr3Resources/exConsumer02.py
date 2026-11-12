@@ -10,10 +10,7 @@ def parse_message(raw):
 with Client("./data") as client:
   with client.open_pool("grObjPool") as pool:
 
-    stream = pool.tail(
-      timeout_ms=None,
-      tags=["gfx", "scope:sharedCanvas"]
-    )
+    stream = pool.tail(timeout_ms=None, tags=["gfx", "scope:sharedCanvas"], live_only=True)
 
     for raw in stream:
       #msg = parse_message(raw)
