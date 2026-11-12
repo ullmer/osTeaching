@@ -7,12 +7,14 @@ import tkinter as tk
 from tkinter import ttk
 
 class enoScrollingButtons:
-  autoBuildUI = False
-  tkRoot      = None
-  tkTitle     = 'buttons'
-  tkGeom      = "300x700"
-  tkCanvas    = None
-  tkContainer = None
+  autoBuildUI    = False
+  tkRoot         = None
+  tkTitle        = 'buttons'
+  tkGeom         = "300x700"
+  tkCanvas       = None
+  tkScroll       = None
+  tkContainer    = None
+  tkCanvasWindow = None
 
  ########### constructor ###########
   def __init__(self, **kwargs):
@@ -46,30 +48,27 @@ class enoScrollingButtons:
       container.pack(fill="both", expand=True)
 
       # Canvas + scrollbar
-canvas = tk.Canvas(container)
-scrollbar = ttk.Scrollbar(container, orient="vertical", command=canvas.yview)
+      canvas    = self.tkCanvas = tk.Canvas(container)
+      scrollbar = self.tkScroll = ttk.Scrollbar(container, orient="vertical", command=canvas.yview)
 
-canvas.configure(yscrollcommand=scrollbar.set)
+      canvas.configure(yscrollcommand=scrollbar.set)
+      scrollbar.pack(side="right", fill="y")
+      canvas.pack(side="left", fill="both", expand=True)
 
-scrollbar.pack(side="right", fill="y")
-canvas.pack(side="left", fill="both", expand=True)
+      # Frame that will hold the buttons
+      buttonFrame = ttk.Frame(canvas)
 
-# Frame that will hold the buttons
-button_frame = ttk.Frame(canvas)
+      # Create a window inside the canvas
+      self.tkCanvasWindow = canvas.create_window((0, 0), window=button_frame, anchor="nw")
 
-# Create a window inside the canvas
-canvas_window = canvas.create_window(
-  (0, 0),
-  window=button_frame,
-  anchor="nw"
-)
+  def on_frame_configure(self, event):
+    canvas = self.tkCanvas
+    canvas.configure(scrollregion=canvas.bbox("all"))
 
-def on_frame_configure(event):
-  canvas.configure(scrollregion=canvas.bbox("all"))
-
-def on_canvas_configure(event):
-  # Keep the internal frame width equal to the canvas width
-  canvas.itemconfig(canvas_window, width=event.width)
+  def on_canvas_configure(self.event):
+    # Keep the internal frame width equal to the canvas width
+    canvas = self.tkCanvas
+    canvas.itemconfig(canvas_window, width=event.width)
 
 button_frame.bind("<Configure>", on_frame_configure)
 canvas.bind("<Configure>", on_canvas_configure)
