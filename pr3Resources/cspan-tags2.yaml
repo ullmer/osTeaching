@@ -9,7 +9,6 @@ content:
 tags:
   busCom: 
     catLet: {let: B,   catName: "Business & Commerce",          subcats:  35, programs: 14332}
-    
     subcats:
       agricu: {name: "Agriculture",                                programs:    30, tagId: 191}
       banFin: {name: "Banking & Financial Markets", subcats:   8, programs:  1071}
@@ -59,7 +58,7 @@ tags:
 
   forDef:
     catLet: {let: F,   catName: "Foreign Affairs & Defense",   subcats: 183, programs: 38593}
-    subcat:
+    subcats:
       africa: {name:  "Africa",                     subcats:  22, programs:   868}
       asia:   {name:  "Asia",                       subcats:   7, programs:  2059}
       ausNe:  {name:  "Australia & New Zealand",    subcats:   2, programs:  3737}
@@ -82,18 +81,20 @@ tags:
       weapon: {name:  "Weapons"}
   
   heaWel:
-    - {catLet: H,   catName:  "Health & Welfare",           programs: 11881}
-    - {abbrev: druPol, name:  "Drug Policy",                programs:   334}
-    - {abbrev: heaCar, name:  "Health Care Reform",         programs:   119}
-    - {abbrev: heaPol, name:  "Health Policy",              programs:  6399}
-    - {abbrev: socPol, name:  "Social Policy",              programs:  4131}
+    catLet: {let: H,   catName:  "Health & Welfare",           programs: 11881}
+    subcats:
+      druPol: {name:  "Drug Policy",                programs:   334}
+      heaCar: {name:  "Health Care Reform",         programs:   119}
+      heaPol: {name:  "Health Policy",              programs:  6399}
+      socPol: {name:  "Social Policy",              programs:  4131}
 
   sciTec:
-    - {catLet: T,   catName:  "Science & Technology", programs:     }
-    - {abbrev: enePol, name:  "Energy Policy",        programs:  768}
-    - {abbrev: enviro, name:  "Environment",          programs: 2391}
-    - {abbrev: space,  name:  "Space",                programs:     }
-    - {abbrev: cliCha, name:  "Climate Change",       programs:     }
+    catLet: {let: T,   catName:  "Science & Technology", programs:     }
+    subcats:
+      enePol: {name:  "Energy Policy",        programs:  768}
+      enviro: {name:  "Environment",          programs: 2391}
+      space:  {name:  "Space",                programs:     }
+      cliCha: {name:  "Climate Change",       programs:     }
 
   minEqu:
 
