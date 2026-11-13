@@ -1,5 +1,6 @@
 import tkinter as tk
 import traceback
+import os
 
 from functools import partial # mechanism used to construct callback
 from multiprocessing import Process
@@ -44,6 +45,15 @@ def buildCallback1(methodName, arg1):
 
 ################# create window ################# 
 
+def winLift():
+  try: #dance with weird window dynamics, at least within some OS WM
+    win.lift()
+    win.focus_force()
+    print("winLift")
+  except: pass
+
+################# create window ################# 
+
 def create_window(name, title_text):
   win = tk.Tk()    #win = tk.Toplevel(root)
   win.geometry(HOME_GEOMETRIES[name])
@@ -83,6 +93,9 @@ def create_window(name, title_text):
   bmw.pack(side="right", padx=10)
 
   windows[name] = win
+  win.after_idle(winLift)
+  print(os.getpid())
+  print(win.tk.call("tk", "windowingsystem"))
   win.mainloop()
 
 # ----------------------------------------------------------------------
@@ -95,7 +108,6 @@ if __name__ == '__main__':
   p3 = Process(target=create_window, args=('document_text',      'document text'))
 
   for p in [p1,p2,p3]: p.start()
-  for p in [p1,p2,p3]: p.join()
 
 ### end ###
 
