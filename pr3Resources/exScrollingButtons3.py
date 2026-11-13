@@ -4,7 +4,6 @@
 
 from enoScrollingButtons import *
 from mdokCategories import *
-from textBlocks     import *
 
 ################## main ##################
 
