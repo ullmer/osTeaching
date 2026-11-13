@@ -89,7 +89,7 @@ tags:
       socPol: {name: Social Policy,              programs:  4131}
 
   sciTec:
-    catLet: {let: T,   catName:  "Science & Technology", programs:     }
+    catLet: {let: T, catName:  "Science & Technology", programs: }
     subcats:
       enePol: {name: Energy Policy,        programs:  768}
       enviro: {name: Environment,          programs: 2391}
@@ -97,24 +97,26 @@ tags:
       cliCha: {name: Climate Change,       programs:     }
 
   minEqu:
+    catLet: {let: M, name:  "Minorities & Equal Opportunity", subcats: 334, programs:  11881}
+    subcats:
+      civRig: {name: Civil Rights, subcats: 693, programs:  4404}
+#Minorities & Equal Opportunity Minorities 3,593    
+#Minorities & Equal Opportunity Racial Relations 118    
 
   hisSoc:
-    catLet: {let: h, name:  "History & Society",  subcats: 334, programs:  11881}
+    catLet: {let: h, name:  "History & Society", subcats: 334, programs:  11881}
     subcats:
-      amePre: {name: American Presidents, subcats: 42, programs:  20833}
-      ameWri: {name: American Writers,                 programs:    548}
-      books:  {name: Books,                            programs:   1360}
-      exeBra: {name: Executive Branch,                 programs:   4215}
-      histor: {name: History,                          programs:   7048}
-      music:  {name: Music,                            programs:     47}
+      amePre: {name: American Presidents,         subcats: 42, programs:  20833}
+      ameWri: {name: American Writers,                         programs:    548}
+      books:  {name: Books,                                    programs:   1360}
+      exeBra: {name: Executive Branch,                         programs:   4215}
+      histor: {name: History,                                  programs:   7048}
+      music:  {name: Music,                                    programs:     47}
 
   socPol:
   staPol:
   wasPol:
 
-#Minorities & Equal Opportunity Civil Rights 693  4404  M
-#Minorities & Equal Opportunity Minorities 3,593    
-#Minorities & Equal Opportunity Racial Relations 118    
 #
 #
 #Social Policy Disaster Relief     S
