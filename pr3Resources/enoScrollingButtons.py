@@ -99,7 +99,7 @@ class EnoScrollingButtons:
 
   def addButton(self, labelStr, callback):
     s = self.ttkStyle
-    btn = ttk.Button(self.tkButtonFrame, text=str(labelStr), command=callback, style=s)
+    btn = ttk.Button(self.tkButtonFrame, text=str(labelStr), command=callback, style='bstyle')
     btn.pack(fill="x", padx=2, pady=2)
 
 ########## main ########## 
