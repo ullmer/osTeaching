@@ -37,47 +37,50 @@ tags:
       onlTec: {name: "Online Technology",            subcats:   2, programs:  385}
 
   couJud:
-    - {catLet: J,   catName: "Courts & Judicial Process",    subcats: 183, programs: 9701}
-    - {abbrev: civRig, name: "Civil Rights",                 subcats:   2, programs:  331}
-    - {abbrev: consti, name: "Constitution",                 subcats:   8, programs:  739}
-    - {abbrev: crime,  name: "Crime",                        subcats:   3, programs:  855}
-    - {abbrev: druPol, name: "Drug Policy",                  subcats:   2, programs:  213}
-    - {abbrev: heaPol, name: "Health Policy",                subcats:   5, programs:  509}
-    - {abbrev: judPro, name: "Judicial Process",             subcats:  12, programs: 2046}
-    - {abbrev: lawEnf, name: "Law Enforcement",              subcats:  12, programs: 2348}
-    - {abbrev: supCou, name: "Supreme Court",                subcats:   1, programs:  739}
-    - {abbrev: scAppt, name: "Supreme Court Appointments",   subcats:  14, programs: 1217}
-    - {abbrev: scCase, name: "Supreme Court Cases",          subcats: 106, programs:  389}
-    - {abbrev: scJust, name: "Supreme Court Justices",       subcats:  18, programs:  292}
+    catLet: {let: J,   catName: "Courts & Judicial Process",    subcats: 183, programs: 9701}
+    subcats: 
+      civRig: {name: "Civil Rights",                 subcats:   2, programs:  331}
+      consti: {name: "Constitution",                 subcats:   8, programs:  739}
+      crime:  {name: "Crime",                        subcats:   3, programs:  855}
+      druPol: {name: "Drug Policy",                  subcats:   2, programs:  213}
+      heaPol: {name: "Health Policy",                subcats:   5, programs:  509}
+      judPro: {name: "Judicial Process",             subcats:  12, programs: 2046}
+      lawEnf: {name: "Law Enforcement",              subcats:  12, programs: 2348}
+      supCou: {name: "Supreme Court",                subcats:   1, programs:  739}
+      scAppt: {name: "Supreme Court Appointments",   subcats:  14, programs: 1217}
+      scCase: {name: "Supreme Court Cases",          subcats: 106, programs:  389}
+      scJust: {name: "Supreme Court Justices",       subcats:  18, programs:  292}
 
   eduIss:
-    - {catLet: E,   catName: "Educational Issues",          subcats:    2, programs: 2034}
-    - {abbrev: colUni, name:  "Colleges & Universities",                   programs:   76}
-    - {abbrev: eduPol, name:  "Educational Policy",         subcats:   18, programs: 1958}
+    catLet: {let: E,   catName: "Educational Issues",          subcats:    2, programs: 2034}
+    subcats:
+      colUni: {name:  "Colleges & Universities",                   programs:   76}
+      eduPol: {name:  "Educational Policy",         subcats:   18, programs: 1958}
 
   forDef:
-    - {catLet: F,   catName: "Foreign Affairs & Defense",   subcats: 183, programs: 38593}
-    - {abbrev: africa, name:  "Africa",                     subcats:  22, programs:   868}
-    - {abbrev: asia,   name:  "Asia",                       subcats:   7, programs:  2059}
-    - {abbrev: ausNeZ, name:  "Australia & New Zealand",    subcats:   2, programs:  3737}
-    - {abbrev: carBas, name:  "Caribbean Basin",            subcats:   2, programs:  2385}
-    - {abbrev: cenAme, name:  "Central America",            subcats:   5, programs:   395}
-    - {abbrev: dptDef, name:  "Department of Defense",      subcats:  20, programs:  5325}
-    - {abbrev: druPol, name:  "Drug Policy",                subcats:   2, programs:   189}
-    - {abbrev: easEur, name:  "Eastern Europe",             subcats:   9, programs:   751}
-    - {abbrev: forPol, name:  "Foreign Policy",             subcats:  11, programs:  2327}
-    - {abbrev: humRig, name:  "Human Rights",               subcats:   4, programs:   261}
-    - {abbrev: intSec, name:  "International Security",     subcats:  13, programs:  7150}
-    - {abbrev: intTra, name:  "International Trade",        subcats:  15, programs:  2406}
-    - {abbrev: midEas, name:  "Middle East",                subcats:   8, programs:  2317}
-    - {abbrev: norAme, name:  "North America",              subcats:   3, programs:   656} 
-    - {abbrev: pacRim, name:  "Pacific Rim",                subcats:  14, programs:  1852}
-    - {abbrev: perGul, name:  "Persian Gulf",               subcats:  16, programs:  7904}
-    - {abbrev: souAme, name:  "South America",              subcats:   6, programs:   242}
-    - {abbrev: sovUni, name:  "Soviet Union",               subcats:   8, programs:   779}
-    - {abbrev: wesEur, name:  "Western Europe",             subcats:  16, programs:  2690}
-    - {abbrev: weapon, name:  "Weapons"}
-
+    catLet: {let: F,   catName: "Foreign Affairs & Defense",   subcats: 183, programs: 38593}
+    subcat:
+      africa: {name:  "Africa",                     subcats:  22, programs:   868}
+      asia:   {name:  "Asia",                       subcats:   7, programs:  2059}
+      ausNe:  {name:  "Australia & New Zealand",    subcats:   2, programs:  3737}
+      carBas: {name:  "Caribbean Basin",            subcats:   2, programs:  2385}
+      cenAme: {name:  "Central America",            subcats:   5, programs:   395}
+      dptDef: {name:  "Department of Defense",      subcats:  20, programs:  5325}
+      druPol: {name:  "Drug Policy",                subcats:   2, programs:   189}
+      easEur: {name:  "Eastern Europe",             subcats:   9, programs:   751}
+      forPol: {name:  "Foreign Policy",             subcats:  11, programs:  2327}
+      humRig: {name:  "Human Rights",               subcats:   4, programs:   261}
+      intSec: {name:  "International Security",     subcats:  13, programs:  7150}
+      intTra: {name:  "International Trade",        subcats:  15, programs:  2406}
+      midEas: {name:  "Middle East",                subcats:   8, programs:  2317}
+      norAme: {name:  "North America",              subcats:   3, programs:   656} 
+      pacRim: {name:  "Pacific Rim",                subcats:  14, programs:  1852}
+      perGul: {name:  "Persian Gulf",               subcats:  16, programs:  7904}
+      souAme: {name:  "South America",              subcats:   6, programs:   242}
+      sovUni: {name:  "Soviet Union",               subcats:   8, programs:   779}
+      wesEur: {name:  "Western Europe",             subcats:  16, programs:  2690}
+      weapon: {name:  "Weapons"}
+  
   heaWel:
     - {catLet: H,   catName:  "Health & Welfare",           programs: 11881}
     - {abbrev: druPol, name:  "Drug Policy",                programs:   334}
