@@ -59,7 +59,8 @@ class EnoScrollingButtons:
       container.pack(fill="both", expand=True)
 
       s = self.ttkStyle = ttk.Style()
-      s.configure('bstyle', font=self.font)
+      s.configure('.', font=self.font)
+      #s.configure('bstyle', font=self.font)
 
       # Canvas + scrollbar
       canvas    = self.tkCanvas = tk.Canvas(container)
@@ -99,7 +100,8 @@ class EnoScrollingButtons:
 
   def addButton(self, labelStr, callback):
     s = self.ttkStyle
-    btn = ttk.Button(self.tkButtonFrame, text=str(labelStr), command=callback, style='bstyle')
+    #btn = ttk.Button(self.tkButtonFrame, text=str(labelStr), command=callback, style='bstyle')
+    btn = ttk.Button(self.tkButtonFrame, text=str(labelStr), command=callback)
     btn.pack(fill="x", padx=2, pady=2)
 
 ########## main ########## 
