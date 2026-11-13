@@ -4,9 +4,10 @@
 
 import logging
 import tkinter as tk
-from tkinter import ttk
+from tkinter   import ttk
+from functools import partial
 
-class enoScrollingButtons:
+class EnoScrollingButtons:
   autoBuildUI    = False
   tkRoot         = None
   tkTitle        = 'buttons'
@@ -17,7 +18,7 @@ class enoScrollingButtons:
   tkButtonFrame  = None
   tkCanvasWindow = None
 
- ########### constructor ###########
+  ########### constructor ###########
   def __init__(self, **kwargs):
     self.__dict__.update(kwargs)
     logging.basicConfig(level=logging.INFO)
@@ -41,6 +42,11 @@ class enoScrollingButtons:
     root.title(self.tkTitle)
     root.geometry(self.tkGeom)
 
+  ########### mouse wheel ###########
+  def mousewheel(self, event):
+    canvas = self.tkCanvas
+    canvas.yview_scroll(int(-event.delta / 120), "units")
+
   ########### build ui ###########
   def buildUI(self):
     try:
@@ -50,7 +56,8 @@ class enoScrollingButtons:
 
       # Canvas + scrollbar
       canvas    = self.tkCanvas = tk.Canvas(container)
-      scrollbar = self.tkScroll = ttk.Scrollbar(container, orient="vertical", command=canvas.yview)
+      scrollbar = self.tkScroll = ttk.Scrollbar(container, orient="vertical", 
+        command=canvas.yview)
 
       canvas.configure(yscrollcommand=scrollbar.set)
       scrollbar.pack(side="right", fill="y")
@@ -61,6 +68,7 @@ class enoScrollingButtons:
 
       # Create a window inside the canvas
       self.tkCanvasWindow = canvas.create_window((0, 0), window=buttonFrame, anchor="nw")
+      canvas.bind_all("<MouseWheel>", self.mousewheel)  # Windows/macOS
 
   ########### on frame configure ###########
 
@@ -79,24 +87,23 @@ class enoScrollingButtons:
     self.tkButtonFrame.bind("<Configure>", self.onFrameConfigure)
     self.tkCanvas.bind("<Configure>",      self.onCanvasConfigure)
 
-# Button callback
-def button_pressed(n):
-  print(n)
+  ########### add button ###########
 
-# Create 30 vertically packed, width-filling buttons
-for i in range(1, 31):
-  btn = ttk.Button(
-    button_frame,
-    text=str(i),
-    command=lambda n=i: button_pressed(n)
-  )
-  btn.pack(fill="x", padx=2, pady=2)
+  def addButton(self, labelStr, callback):
+    btn = ttk.Button(self.tkButtonFrame, text=str(labelStr), command=callback)
+    btn.pack(fill="x", padx=2, pady=2)
 
-# Optional mouse wheel support
-def mousewheel(event):
-  canvas.yview_scroll(int(-event.delta / 120), "units")
+########## main ########## 
 
-canvas.bind_all("<MouseWheel>", mousewheel)  # Windows/macOS
+if __name__ == "__main__":
+  esb = EnoScrollingButtons(autoBuildUI = True)
+
+  def buttonCb(self, n): print(n) # Button callback
+
+  # Create 30 vertically packed, width-filling buttons
+  for i in range(1, 31):
+    cb = partial(buttonCb, i)
+    esb.addButton(i, cb)
 
 root.mainloop()
 
