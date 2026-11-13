@@ -30,25 +30,25 @@ tags:
   comTod:
     catLet: {let: c,   catName: "Communication Today",          subcats:  28, programs: 6547}
     subcats:
-      commun: {name: "Communication",                subcats:   6, programs: 2177}
-      journa: {name: "Journalism",                   subcats:   6, programs: 1101}
-      media:  {name: "Media",                        subcats: 161, programs: 3269}
-      onlTec: {name: "Online Technology",            subcats:   2, programs:  385}
+      commun: {name: Communication,                subcats:   6, programs: 2177}
+      journa: {name: Journalism,                   subcats:   6, programs: 1101}
+      media:  {name: Media,                        subcats: 161, programs: 3269}
+      onlTec: {name: Online Technology,            subcats:   2, programs:  385}
 
   couJud:
     catLet: {let: J,   catName: "Courts & Judicial Process",    subcats: 183, programs: 9701}
     subcats: 
-      civRig: {name: "Civil Rights",                 subcats:   2, programs:  331}
-      consti: {name: "Constitution",                 subcats:   8, programs:  739}
-      crime:  {name: "Crime",                        subcats:   3, programs:  855}
-      druPol: {name: "Drug Policy",                  subcats:   2, programs:  213}
-      heaPol: {name: "Health Policy",                subcats:   5, programs:  509}
-      judPro: {name: "Judicial Process",             subcats:  12, programs: 2046}
-      lawEnf: {name: "Law Enforcement",              subcats:  12, programs: 2348}
-      supCou: {name: "Supreme Court",                subcats:   1, programs:  739}
-      scAppt: {name: "Supreme Court Appointments",   subcats:  14, programs: 1217}
-      scCase: {name: "Supreme Court Cases",          subcats: 106, programs:  389}
-      scJust: {name: "Supreme Court Justices",       subcats:  18, programs:  292}
+      civRig: {name: Civil Rights,                 subcats:   2, programs:  331}
+      consti: {name: Constitution,                 subcats:   8, programs:  739}
+      crime:  {name: Crime,                        subcats:   3, programs:  855}
+      druPol: {name: Drug Policy,                  subcats:   2, programs:  213}
+      heaPol: {name: Health Policy,                subcats:   5, programs:  509}
+      judPro: {name: Judicial Process,             subcats:  12, programs: 2046}
+      lawEnf: {name: Law Enforcement,              subcats:  12, programs: 2348}
+      supCou: {name: Supreme Court,                subcats:   1, programs:  739}
+      scAppt: {name: Supreme Court Appointments,   subcats:  14, programs: 1217}
+      scCase: {name: Supreme Court Cases,          subcats: 106, programs:  389}
+      scJust: {name: Supreme Court Justices,       subcats:  18, programs:  292}
 
   eduIss:
     catLet: {let: E,   catName: "Educational Issues",          subcats:    2, programs: 2034}
@@ -83,18 +83,18 @@ tags:
   heaWel:
     catLet: {let: H,   catName:  "Health & Welfare",           programs: 11881}
     subcats:
-      druPol: {name:  "Drug Policy",                programs:   334}
-      heaCar: {name:  "Health Care Reform",         programs:   119}
-      heaPol: {name:  "Health Policy",              programs:  6399}
-      socPol: {name:  "Social Policy",              programs:  4131}
+      druPol: {name: Drug Policy,                programs:   334}
+      heaCar: {name: Health Care Reform,         programs:   119}
+      heaPol: {name: Health Policy,              programs:  6399}
+      socPol: {name: Social Policy,              programs:  4131}
 
   sciTec:
     catLet: {let: T,   catName:  "Science & Technology", programs:     }
     subcats:
-      enePol: {name:  "Energy Policy",        programs:  768}
-      enviro: {name:  "Environment",          programs: 2391}
-      space:  {name:  "Space",                programs:     }
-      cliCha: {name:  "Climate Change",       programs:     }
+      enePol: {name: Energy Policy,        programs:  768}
+      enviro: {name: Environment,          programs: 2391}
+      space:  {name: Space,                programs:     }
+      cliCha: {name: Climate Change,       programs:     }
 
   minEqu:
 
