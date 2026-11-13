@@ -9,6 +9,7 @@ from tkinter   import ttk
 from functools import partial
 
 class EnoScrollingButtons:
+  font=('Helvetica', 18)
   autoBuildUI    = False
   tkRoot         = None
   tkTitle        = 'buttons'
@@ -18,6 +19,7 @@ class EnoScrollingButtons:
   tkContainer    = None
   tkButtonFrame  = None
   tkCanvasWindow = None
+  ttkStyle       = None
 
   ########### constructor ###########
   def __init__(self, **kwargs):
@@ -56,6 +58,9 @@ class EnoScrollingButtons:
       container = self.tkContainer = ttk.Frame(root)
       container.pack(fill="both", expand=True)
 
+      s = self.ttkStyle = ttk.Style()
+      s.configure('bstyle', font=self.font)
+
       # Canvas + scrollbar
       canvas    = self.tkCanvas = tk.Canvas(container)
       scrollbar = self.tkScroll = ttk.Scrollbar(container, orient="vertical", 
@@ -93,7 +98,8 @@ class EnoScrollingButtons:
   ########### add button ###########
 
   def addButton(self, labelStr, callback):
-    btn = ttk.Button(self.tkButtonFrame, text=str(labelStr), command=callback)
+    s = self.ttkStyle
+    btn = ttk.Button(self.tkButtonFrame, text=str(labelStr), command=callback, style=s)
     btn.pack(fill="x", padx=2, pady=2)
 
 ########## main ########## 
