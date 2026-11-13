@@ -3,6 +3,7 @@
 # Begun 2026-11-11
 
 import logging
+import traceback
 import tkinter as tk
 from tkinter   import ttk
 from functools import partial
@@ -51,6 +52,7 @@ class EnoScrollingButtons:
   def buildUI(self):
     try:
       # Main container
+      root      = self.tkRoot 
       container = self.tkContainer = ttk.Frame(root)
       container.pack(fill="both", expand=True)
 
@@ -69,6 +71,7 @@ class EnoScrollingButtons:
       # Create a window inside the canvas
       self.tkCanvasWindow = canvas.create_window((0, 0), window=buttonFrame, anchor="nw")
       canvas.bind_all("<MouseWheel>", self.mousewheel)  # Windows/macOS
+    except: self.logErr("buildUI")
 
   ########### on frame configure ###########
 
@@ -105,6 +108,6 @@ if __name__ == "__main__":
     cb = partial(buttonCb, i)
     esb.addButton(i, cb)
 
-root.mainloop()
+  esb.tkRoot.mainloop()
 
 ### end ###
