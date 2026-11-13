@@ -8,19 +8,15 @@ from textBlocks     import *
 
 ################## main ##################
 
-mc = mdokCategories('cspanCategories.txt')
-ml = mc.getCategoryList()
-
-print('categories:', ml)
-
 esb = EnoScrollingButtons(autoBuildUI = True)
+mc  = mdokCategories('cspanCategories.txt')
+mcl = mc.getCategoryList()
 
-def buttonCb(self, n): print(n) # Button callback
+def buttonCb(self, category): print(category) # Button callback
 
-# Create 30 vertically packed, width-filling buttons
-for i in range(1, 31):
-  cb = partial(buttonCb, i)
-  esb.addButton(i, cb)
+for category in mcl:
+  cb = partial(buttonCb, category)
+  esb.addButton(category, cb)
 
 esb.tkRoot.mainloop()
 
