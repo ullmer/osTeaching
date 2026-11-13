@@ -11,29 +11,29 @@ tags:
     catLet: {let: B,   catName: "Business & Commerce",          subcats:  35, programs: 14332}
     subcats:
       agricu: {name: "Agriculture",                                programs:    30, tagId: 191}
-      banFin: {name: "Banking & Financial Markets", subcats:   8, programs:  1071}
+      banFin: {name: "Banking & Financial Markets",   subcats:   8, programs:  1071}
       comput: {name: "Computer",                                  programs:   232}
-      fedBud: {name: "Federal Budget",              subcats:   8, programs:  6040, tagId: 200}
-      ecoPol: {name: "Economic Policy",             subcats:   5, programs:  4624, tagId: 224}
-      empPol: {name: "Employment Policy",           subcats:   9, programs:  1572}
-      transp: {name: "Transportation",              subcats:   4, programs:   995}
+      fedBud: {name: "Federal Budget",                subcats:   8, programs:  6040, tagId: 200}
+      ecoPol: {name: "Economic Policy",               subcats:   5, programs:  4624, tagId: 224}
+      empPol: {name: "Employment Policy",             subcats:   9, programs:  1572}
+      transp: {name: "Transportation",                subcats:   4, programs:   995}
 
   camEle:
-    catLet: {let: C,  catName: "Campaigns & Elections",        subcats: 145, programs: 25820}
+    catLet: {let: C, catName: "Campaigns & Elections",subcats: 145, programs: 25820}
     subcats: 
-      campai: {name:  "Campaigns",                   subcats:  32, programs: 14971}
-      legBra: {name:  "Legislative Branch",          subcats:   9, programs: 17013, tagId: 1341}
-      preCam: {name:  "Presidential Campaign",       subcats:  15, programs:  1944}
-      preNom: {name:  "Presidential Nomination",     subcats:  86, programs:  7037}
-      camWhi: {name:  "Campaigns Road to the White House" }
+      campai: {name: Campaigns,                       subcats:  32, programs: 14971}
+      legBra: {name: Legislative Branch,              subcats:   9, programs: 17013, tagId: 1341}
+      preCam: {name: Presidential Campaign,           subcats:  15, programs:  1944}
+      preNom: {name: Presidential Nomination,         subcats:  86, programs:  7037}
+      camWhi: {name: Campaigns Road to the White House }
 
   comTod:
-    catLet: {let: c,   catName: "Communication Today",          subcats:  28, programs: 6547}
+    catLet: {let: c, catName: Communication Today,    subcats:  28, programs: 6547}
     subcats:
-      commun: {name: Communication,                subcats:   6, programs: 2177}
-      journa: {name: Journalism,                   subcats:   6, programs: 1101}
-      media:  {name: Media,                        subcats: 161, programs: 3269}
-      onlTec: {name: Online Technology,            subcats:   2, programs:  385}
+      commun: {name: Communication,                   subcats:   6, programs: 2177}
+      journa: {name: Journalism,                      subcats:   6, programs: 1101}
+      media:  {name: Media,                           subcats: 161, programs: 3269}
+      onlTec: {name: Online Technology,               subcats:   2, programs:  385}
 
   couJud:
     catLet: {let: J,   catName: "Courts & Judicial Process",    subcats: 183, programs: 9701}
