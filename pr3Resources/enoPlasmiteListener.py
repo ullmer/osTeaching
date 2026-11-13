@@ -21,6 +21,7 @@ class enoPlasmiteListener:
   callback = None
   ready    = None
   tags     = None
+  live_only= True
 
   ########### constructor ###########
   def __init__(self, **kwargs):
@@ -59,13 +60,13 @@ class enoPlasmiteListener:
       self.logger.info(f"Connected to pool {self.poolName}")
       self.ready.set()
 
-      for msg in pool.tail(timeout_ms=None, tags=self.tags):
+      for msg in pool.tail(timeout_ms=None, tags=self.tags, live_only=self.live_only):
         if not self.running: break
         try:
           if self.callback: 
-            if isinstance(msg, bytes):
-              msg = msg.decode("utf-8")
-              obj = json.loads(msg, object_hook=lambda d: SimpleNamespace(**d))
+            if isinstance(msg.raw, bytes):
+              mrd = msg.raw.decode("utf-8")
+              obj = json.loads(mrd, object_hook=lambda d: SimpleNamespace(**d))
               self.callback(obj)
         except Exception: traceback.print_exc()
 
