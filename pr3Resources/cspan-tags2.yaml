@@ -99,20 +99,19 @@ tags:
   minEqu:
 
   hisSoc:
-    - {abbrev: , name:  "",                subcats: 334, programs:  11881}
+    catLet: {let: h, name:  "History & Society",  subcats: 334, programs:  11881}
+    subcats:
+      amePre: {name: American Presidents, subcats: 42, programs:  20833}
+      ameWri: {name: American Writers,                 programs:    548}
+      books:  {name: Books,                            programs:   1360}
+      exeBra: {name: Executive Branch,                 programs:   4215}
+      histor: {name: History,                          programs:   7048}
+      music:  {name: Music,                            programs:     47}
 
   socPol:
   staPol:
   wasPol:
 
-#
-#History & Society American Presidents 42  20833  h
-#History & Society American Writers 548    
-#History & Society Books 1360    
-#History & Society Executive Branch 4215    
-#History & Society History 7048    
-#History & Society Music 47    
-#
 #Minorities & Equal Opportunity Civil Rights 693  4404  M
 #Minorities & Equal Opportunity Minorities 3,593    
 #Minorities & Equal Opportunity Racial Relations 118    
@@ -128,12 +127,5 @@ tags:
 #Washington Politics Legislative Branch 2869    
 #Washington Politics Presidential Transition 431    
 #Washington Politics Public Figures 31    
-#
-#  mapExpansion:  
-#    CECAS: 
-#      CECAS: {n: "College of Engineering, Computing, & Applied Sciences", u: "https://clemson.edu/cecas/"}
-#      AE:    {n: "Automotive Engineering",              u: "https://clemson.edu/cecas/departments/automotive-engineering/"}
-#      BioE:  {n: "Bioengineering",                      u: "https://clemson.edu/cecas/departments/bioe/"}
-#      CE:    {n: "Civil Engineering",                   u: "https://clemson.edu/cecas/departments/ce/"}
-#      ECE:   {n: "Electrical & Computer Engineering",   u: "https://clemson.edu/cecas/departments/ece/"}
+
 ### end ###
