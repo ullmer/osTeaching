@@ -100,8 +100,8 @@ tags:
     catLet: {let: M, name:  "Minorities & Equal Opportunity", subcats: 334, programs:  11881}
     subcats:
       civRig: {name: Civil Rights, subcats: 693, programs:  4404}
-#Minorities & Equal Opportunity Minorities 3,593    
-#Minorities & Equal Opportunity Racial Relations 118    
+      minori: {name: Minorities,                 programs:  3593}
+      racRel: {name: Racial Relations,           programs:   118}  
 
   hisSoc:
     catLet: {let: h, name:  "History & Society", subcats: 334, programs:  11881}
@@ -114,20 +114,21 @@ tags:
       music:  {name: Music,                                    programs:     47}
 
   socPol:
-  staPol:
-  wasPol:
+    catLet: {let: S, name: "Social Policy & Disaster Relief"}
 
-#
-#
-#Social Policy Disaster Relief     S
-#
-#State Politics County Politics 5752  5752  s
-#
-#Washington Politics Executive Branch 463  4193  W
-#Washington Politics Federal Government 80    
-#Washington Politics Impeachment Process 308    
-#Washington Politics Legislative Branch 2869    
-#Washington Politics Presidential Transition 431    
-#Washington Politics Public Figures 31    
+  staPol:
+    catLet: {let: S, name: State Politics}
+    subcats:
+      couPol: {name: County Politics, programs: 5752}
+
+  wasPol:
+    catLet: {let: W, name: Washington Politics}
+    subcats:
+      exeBra: {name: Executive Branch,        programs: 4193}
+      fedGov: {name: Federal Government,      programs:   80}
+      impPro: {name: Impeachment Process,     programs:  308}
+      legBra: {name: Legislative Branch,      programs: 2869}
+      preTra: {name: Presidential Transition, programs:  431}
+      pubFig: {name: Public Figures,          programs:   31}
 
 ### end ###
