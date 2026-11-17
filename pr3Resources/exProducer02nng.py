@@ -19,7 +19,8 @@ msg = {
 }
 
 def sendCb():
-  global tk
+  global pub
+  pub.send(json.dumps(msg).encode("utf-8"))
 
 def exitCb(): sys.exit(1)
 
@@ -29,8 +30,6 @@ root.title("nng send ex01")
 b1 = tk.Button(text="send via nng", command=sendCb)
 b2 = tk.Button(text="quit",         command=exitCb)
 for b in [b1, b2]: b.pack()
-
-pub.send(json.dumps(msg).encode("utf-8"))
 
 root.mainloop()
 
