@@ -30,7 +30,7 @@ cb   = pwtm.evalCb
 pwtm.cbMsg = "window.scrollTo({top: 1000, behavior: 'smooth'})"
 
 root = Tk()                                                
-b    = Button(root, text="Hello, world!", command=cb) 
+b    = Button(root, text="evaluate scrollTo", command=cb) 
 b.pack()                                                   
 root.mainloop()                                            
 
