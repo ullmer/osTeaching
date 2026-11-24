@@ -12,8 +12,8 @@ class playwrightTkMgr:
     if self.autoLaunch: self.launchPlaywright()
 
   def launchPlaywright(self):
-    self.mgr = sync_playwright() 
-    self.p   = self.mgr.start()
+    self.mgr     = sync_playwright() 
+    self.p       = self.mgr.start()
     self.browser = self.p.chromium.launch(headless=False, executable_path = self.executable_path)
     self.page    = self.browser.new_page()
     self.page.goto(self.defaultWeb)
