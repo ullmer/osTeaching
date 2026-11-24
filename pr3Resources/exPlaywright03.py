@@ -18,15 +18,15 @@ class playwrightTkMgr:
     self.page    = self.browser.new_page()
     self.page.goto(self.defaultWeb)
 
-  def simpleCb(self):
-    print("playwrightTkMgr:simpleCb called")
+  def evalCb(self):
+    print("playwrightTkMgr:evalCb called")
     cbm = self.cbMsg
     if cbm is not None: self.page.evaluate(cbm)
 
 #### main ####
 
 pwtm = playwrightTkMgr()
-cb   = pwtm.simpleCb
+cb   = pwtm.evalCb
 pwtm.cbMsg = "window.scrollTo({top: 1000, behavior: 'smooth'})"
 
 root = Tk()                                                
